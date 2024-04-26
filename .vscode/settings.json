@@ -1,0 +1,6 @@
+{
+    "git.enabled": true,
+    "git.enableSmartCommit": true,
+    "git.enableStatusBarSync": false,
+    "git.enableCommitSigning": true
+}

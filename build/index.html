@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .slide-background{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 120vh;
+      height: 100%;
+      background-image: url('img/download\ \(1\).jpg'); 
+      background-size: cover;
+      z-index: -1; /* Send it behind other content */
+      animation: slideBackground 50s linear infinite;
+    }
+
+    @keyframes slideBackground{
+      from{
+        background-position: 0 0;
+      }
+      to{
+        background-position: 100% 0;
+      }
+    }
+    .opposite-background{
+      position: fixed;
+      top: 0;
+      right:0;
+      width: 120vh;
+      height: 100%;
+      background-image: url('img/download\ \(1\).jpg'); 
+      background-size: cover;
+      z-index: -1; /* Send it behind other content */
+      animation: oppositeBackground 50s linear infinite;
+    }
+
+    @keyframes oppositeBackground{
+      from{
+        background-position: 100% 0;
+      }
+      to{
+        background-position: 0 0;
+      }
+    }
+    
+  </style>
+  
+</head>
+
+
+      <body class="min-h-screen bg-slate-50">
+        <div class="slide-background"></div>
+        <div class="opposite-background"></div>
+  <header class="sticky top-0 z-1";>
+     <section class="mx-auto  flex max-w-5xl items-center justify-between p-4">
+      <h1 class="font-bold text-3xl text-white">ABIGAIL WAGURA </h1>
+      <div>
+        <button id="open-button"class="text-3xl text-white sm:hidden focus:outline-none absolute right-0 top-0 ">
+          &#9776;
+        </button>
+        <nav class="hidden sm:block  space-x-7 text-2xl text-white" aria-label="main">
+          <a href="index.html" class="hover:opacity-40">Home</a>
+          <a href="about.html" class="hover:opacity-40">About</a>
+          <a href="work.html" class="hover:opacity-40">Work</a>
+          <a href="contactme.html" class="hover:opacity-40">Contact Me</a>
+
+        </nav>
+      </div>
+    </section>
+  </header>
+  <main>
+    <!-- import a font -->
+    <!-- use internal style and add an effect -->
+    <style>
+       @import url("https://fonts.googleapis.com/css?family=Croissant One&effect=neon") 
+      
+    </style>
+    <p class="font-cursive font-effect-neon text-9xl border-fuchsia-400 p-52 text-white text-center"><em>A_WAGZ</em></p>
+  </main>
+  <!-- put animation -->
+ 
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My work</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+       
+  .sliding-words {
+  position: relative;
+  }
+.word {
+
+    position: relative;
+    text-align: left;
+    bottom: 0; /* Start position at the bottom */
+    transform: translateX(-50);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: slide-up 20s ease forwards;
+}
+    
+
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(-50%, 100%); /* Start from bottom */
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-50%, 0%); /* End at top */
+    opacity: 1;
+  }
+}
+.word:nth-child(1) {
+  animation-delay: 0.5s; /* Delay for the first text */
+}
+.word:nth-child(2) {
+  animation-delay: 1s; /* Delay for the second text */
+}
+.word:nth-child(3) {
+  animation-delay: 1.5s; /* Delay for the third text */
+}
+.word:nth-child(4) {
+  animation-delay: 2s; /* Delay for the fourth text */
+}
+.word:nth-child(5) {
+  animation-delay: 2.5s; /* Delay for the fifth text */
+}
+.word:nth-child(6) {
+  animation-delay: 3s; /* Delay for the sixth text */
+}
+.word:nth-child(7) {
+  animation-delay: 3.5s; /* Delay for the seventh text */
+}
+    </style>
+   
+</head>
+
+<body class="min-h-screen bg-gradient-to-r from-slate-50 via-fuchsia-500 to-blue-500">
+    <header class="sticky top-0 z-1 bg-indigo-800">
+     <section class="mx-auto  flex max-w-5xl items-center justify-between p-4">
+      <h1 class="font-bold text-3xl text-white ">ABIGAIL WAGURA </h1>
+      <div>
+        <button id="open-button"class="text-3xl text-white sm:hidden focus:outline-none absolute right-0 top-0 ">
+          &#9776;
+        </button>
+        <nav class="hidden sm:block  space-x-7 text-2xl text-white" aria-label="main">
+          <a href="index.html" class="hover:opacity-40">Home</a>
+          <a href="about.html" class="hover:opacity-40">About</a>
+          <a href="work.html" class="hover:opacity-40">Work</a>
+          <a href="contactme.html" class="hover:opacity-40">Contact Me</a>
+
+        </nav>
+      </div>
+    </section>
+  </header>
+  <main>
+    <div class="sliding-words text-6xl">
+        <div class="word">The</div>
+        <div class="word">Work</div>
+        <div class="word">&</div>
+        <div class="word">Products</div>
+        <div class="word">of</div>
+        <div class="word">Abigail</div>
+        <div class="word">Wagura</div>
+      </div>
+
+  </main>
+
+
+
+    
+</body>
+</html>
