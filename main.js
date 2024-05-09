@@ -92,7 +92,7 @@ function confirmWinner() {
         gameStatus.textContent = `${playerTurn} wins!😮‍💨`
         playing = false
     } 
-    else if(!options.includes("")){ 
+    else if(!space.includes("")){ 
         gameStatus.textContent = `It's a tie!🤝`
         playing = false
     } else{
