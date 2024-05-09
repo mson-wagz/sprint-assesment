@@ -30,7 +30,7 @@ startGame()
 
 function startGame() {
     myCells.forEach(cell => {
-        cell.addEventListener('click', handleclick)
+        cell.addEventListener("click", handleclick)
     })
     restartButton.addEventListener("click", function restartGame() {
         playerTurn = "X"
@@ -55,7 +55,7 @@ function handleclick(){
     confirmWinner()
 }
 
-function updateCell(cell, index){
+function updateCell(cell, index) {
     space[index] = playerTurn
     cell.textContent = playerTurn
 }
@@ -63,7 +63,7 @@ function updateCell(cell, index){
 function switchPlayer() {
     if(playerTurn == "X"){
         playerTurn = "O"
-    } else {
+    } else if(playerTurn = "O"){
         playerTurn = "X"
     }
     gameStatus.textContent = `${playerTurn}'s Plays`
@@ -88,12 +88,15 @@ function confirmWinner() {
     }
 
     if(gameWon){
+        switchPlayer()
         gameStatus.textContent = `${playerTurn} wins!😮‍💨`
         playing = false
-    } else if(!space.includes("")){
+    } 
+    else if(!options.includes("")){ 
         gameStatus.textContent = `It's a tie!🤝`
         playing = false
     } else{
+        switchPlayer()
     }
 }
 
