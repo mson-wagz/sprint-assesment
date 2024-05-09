@@ -1,4 +1,4 @@
-body {
+/* body {
   font-family: 'Briem Hand', sans-serif;
   background: #f0f0f0;
   display: flex;
@@ -6,22 +6,23 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-}
+} */
 
-h1 {
+/* h1 {
   font-size: 2rem;
-  margin-bottom: 20px;
-}
-
+  margin-bottom: 20px; */
+/* } */
+ 
 .board {
   display: grid;
   grid-template-columns: repeat(3, 100px);
   grid-template-rows: repeat(3, 100px);
-  gap: 5px;
+  gap: 5px; 
 }
 
 .cell {
   background: white;
+  border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,6 +38,14 @@ h1 {
     color: #007BFF;
     content: 'X';
   }
+}
+#start-el{
+  background-color: blanchedalmond;
+  color: black;
+  font-size: 1.5rem;
+  padding-left: 4px;
+  padding-right: 4px;
+  border-radius: 3px;
 }
 
 button {
@@ -55,7 +64,7 @@ button:hover {
   background: #0056b3;
 }
 
-.winning-message {
+/* .winning-message {
   display: none;
   justify-content: center;
   align-items: center;
@@ -103,4 +112,19 @@ button:hover {
 
 .winning-message button:active {
   transform: scale(0.98);
+} */
+.game-over{
+  align-items: center;
+  background-color: rgba(38,36,36,0.8);
+  bottom: 0;
+  color: blanchedalmond;
+  display: flex;
+  font-size: 30px;
+  justify-content: center;
+  left: 0%;
+  position: fixed;
+  right: 0%;
+  text-align: center;
+  top: 0%;
+  z-index: 1000;
 }

@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const startButton = document.getElementById("computer-el");
     const winningMessage = document.querySelector(".winning-message");
     const winningMessageText = document.querySelector("[data-winning-message-text]");
-    const restartButton = document.getElementById("restartButton");
+    const startEl = document.getElementById("start-el")
+    const restartButton = document.getElementById("restart-el");
 
     const WINNING_COMBINATIONS = [
         [0, 1, 2],
@@ -16,23 +17,27 @@ document.addEventListener("DOMContentLoaded", () => {
         [0, 4, 8],
         [2, 4, 6]
     ];
-
+    let boardGame = ['','','','','','','','',''];
     let currentPlayer = 'X';
     let gameActive = false;
     let againstComputer = true; // Indicate that the game is against a computer
+    startButton.addEventListener("click", startGame);
+    restartButton.addEventListener("click", restartBoard);
 
     function startGame() {
         gameActive = true;
-        resetBoard();
+       
     }
 
-    function resetBoard() {
+    function restartBoard() {
+        boardGame = ['','','','','','','','',''];
         currentPlayer = 'X';
         winningMessage.setAttribute("aria-hidden", "true");
         cells.forEach(cell => {
             cell.textContent = "";
         });
-        gameActive = true;
+        gameActive = false;
+        updateBoard();
     }
 
     function checkWinner() {
@@ -76,6 +81,5 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    startButton.addEventListener("click", startGame);
-    restartButton.addEventListener("click", resetBoard);
+    
 });
