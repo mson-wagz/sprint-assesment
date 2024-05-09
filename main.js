@@ -63,3 +63,9 @@ document.addEventListener("DOMContentLoaded", () => {
         gameActive = false;
     }
 });
+
+
+ 
+
+
+

@@ -27,16 +27,23 @@ h1 {
   align-items: center;
   font-size: 3rem;
   transition: background 0.3s;
+  
   cursor: pointer;
 }
 
 .cell:hover {
   background: #e0e0e0;
+  .cell--x:after {
+    color: #007BFF;
+    content: 'X';
+  }
 }
 
 button {
   background: #007BFF;
   color: white;
+  font-weight: bold;
+  border-radius: 3px;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
