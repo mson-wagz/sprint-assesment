@@ -1,0 +1,90 @@
+body {
+  font-family: 'Briem Hand', sans-serif;
+  background: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url(./build/images.jpg);
+  background-size: cover;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: aliceblue;
+  text-shadow: 2px 2px 4px #000000;
+  transition: color 0.3s;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 5px;
+}
+
+.cell {
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  transition: background 0.3s;
+  cursor: pointer;
+}
+
+.cell:hover {
+  background: #e0e0e0;
+}
+
+button {
+  background: #007BFF;
+  color: white;
+  font-weight: bold;
+  border-radius: 3px;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+.winning-message {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.winning-message[aria-hidden="false"] {
+  display: flex;
+}
+
+.winning-message > div {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+footer {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  gap: 5px;
+  background-color: gray;
+}

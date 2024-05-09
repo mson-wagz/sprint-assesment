@@ -7,19 +7,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const restartButton = document.getElementById("restartButton");
 
     const WINNING_COMBINATIONS = [
-        [0, 1, 2],
+        [0, 1, 2], // Rows
         [3, 4, 5],
         [6, 7, 8],
-        [0, 3, 6],
+        [0, 3, 6], // Columns
         [1, 4, 7],
         [2, 5, 8],
-        [0, 4, 8],
+        [0, 4, 8], // Diagonals
         [2, 4, 6]
     ];
 
     let currentPlayer = 'X';
     let gameActive = false;
-    let againstComputer = true; // Indicate that the game is against a computer
 
     function startGame() {
         gameActive = true;
@@ -68,9 +67,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (checkWinner()) {
                     showWinningMessage("You Win!");
                 } else {
-                    currentPlayer = 'O'; // Switch to the computer's turn
+                    currentPlayer = 'O'; 
                     computerMove();
-                    currentPlayer = 'X'; // Switch back to the human's turn
+                    if (gameActive) { // Check if game is still active after computer's move
+                        currentPlayer = 'X'; 
+                    }
                 }
             }
         });
