@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Briem+Hand:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css?family=Rubik Glitch&effct=shadow-multiple" rel="stylesheet" type="text/css">
+     <script src="main.js" defer></script>
+     <script src="computer.js" defer></script>
+    </head>
+
+<body class="min-h-screen bg-black flex flex-col justify-center items-center h-screen" style="background-image: url(images/bg3.jpg);background-repeat: no-repeat;background-size: cover;">
+    <audio autoplay loop>
+        <source src="EnV - FireFrost (320).mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+    </audio>
+        <h1 class="font-effect-shadow-multiple text-9xl text-white font-bold sticky" style="font-family:Rubik Glitch">TIC TAC TOE</h1>
+    
+    <button id="start-el" class="text-white border ">StartGame</button>
+    <p class="text-white text-3xl">do you have the gut?? click this button 👇</p>
+    <button id="computer-el" class="border bg-slate-50 m-6 ">You vs Computer</button>
+    <div class="board " id="board">
+        <div class="cell" data-cell="0"></div>
+        <div class="cell" data-cell="1"></div>
+        <div class="cell" data-cell="2"></div>
+        <div class="cell" data-cell="3"></div>
+        <div class="cell" data-cell="4"></div>
+        <div class="cell" data-cell="5"></div>
+        <div class="cell" data-cell="6"></div>
+        <div class="cell" data-cell="7"></div>
+        <div class="cell" data-cell="8"></div>
+    </div>
+    <!-- <div class="winning-message" aria-hidden="true">
+       <div data-winning-message-text></div> 
+       <button id="restartButton">Restart</button>
+    </div> -->
+    <!-- <div class="game-over">
+        <p>Player <strong>X</strong> is the winner!</p>
+        <button id="restart-el" class="restart-btn" onclick="TicTacToe.start();"><a href="#start-el">Restart Game</a></button>
+    </div> -->
+    <br><br><br>
+<hr>
+    
+ 
+</body>
+</html>

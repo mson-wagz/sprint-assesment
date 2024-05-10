@@ -115,7 +115,7 @@ button:hover {
 } */
 .game-over{
   align-items: center;
-  background-color: rgba(38,36,36,0.8);
+  background-color: rgba(38,36,36,0.0);
   bottom: 0;
   color: blanchedalmond;
   display: flex;
