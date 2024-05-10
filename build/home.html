@@ -6,77 +6,60 @@
     <title>TIC TAC TOE</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css?family=Rubik Glitch&effct=shadow-multiple" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Rubik Glitch&effct=shadow-multiple" rel="stylesheet" type="text/css">  
     <style>
-.container{
-    opacity: 10;
-}
-.sliding-box{
-    position: absolute;
-    top: 40%;
-}
-.box{
-     color:black;
-    text-align: left;
-    right: auto;
-    background-color:blanchedalmond;
-    border-radius: 20px;
-    margin-left:48rem ;
-    font-size:6rem;
-    transform: translateX(-50); 
-    margin-bottom: 20px;
-    opacity: 0;
-    animation: slide-up 20s ease infinite;
- }
-@keyframes slide-up{
-  0% {
-    transform: translateY(-50%, 100%); 
-    opacity: 0;
-  } 
-  100% {
-    transform: translateY(-50%, 0%); 
-    opacity: 1;
-  } 
-}
-.box:nth-child(1) {
-  animation-delay: 0.5s; /* Delay for the first text */
-}
-.box:nth-child(2) {
-  animation-delay: 1s; /* Delay for the second text */
-}
-.box:nth-child(3) {
-  animation-delay: 1.5s; /* Delay for the third text */
-}
+      .container{
+        opacity: 10;
+    }
+    .game-box{
+        animation: slide-up 20s ease infinite;
+     }
+    @keyframes slide-up{
+      0% {
+        transform: translate(20%, 0); 
+        opacity: 0.7;
+      } 
+      100% {
+        transform: translate(0%, 0%); 
+        opacity: 1;
+      } 
+    }
+    .game-box:nth-child(1) {
+      animation-delay: 0.5s; /* Delay for the first text */
+    }
+    .game-box:nth-child(2) {
+      animation-delay: 1s; /* Delay for the second text */
+    }
+    .game-box:nth-child(3) {
+      animation-delay: 1.5s; /* Delay for the third text */
+    }
     </style>
 </head>
-
-<body class="min-h-screen bg-black" style="background-image: url(images/bg2.jpg);background-repeat: no-repeat;background-size: cover;">
-    <audio autoplay loop>
+<body class="min-h-screen bg-black flex flex-col flex-nowrap w-full absolute" style="background-image: url(images/bg2.jpg);background-repeat: no-repeat;background-size: cover;">
+    <header>
+      <audio autoplay loop>
         <source src="EnV - FireFrost (320).mp3" type="audio/mpeg">
         Your browser does not support the audio element.
       </audio>
-    <h1 class="font-effect-shadow-multiple text-9xl text-white font-bold " style="font-family:Rubik Glitch">TIC TAC TOE</h1>
-    <div class="container">
-   <div class=" relative top-2/4 left-20 mt-28 mb-36 ">
-    <img src="images/tac.jpg" alt="tic tac toe board" width="400px" height="800px" style="border-radius: 20px;">
-</div>
-<div class="sliding-box ">
-    <div class="box border w-fit "><a href="index.html">One player</a></div>
-    <div class="box border w-fit "><a href="index1.html">Two players</a>  </div>
-    <div class="box border w-fit "><a href>Multiplayers</a></div>
-</div>
-
-</div>
-    <footer>
-        <footer id="footer" class="bg-gray-700 text-xl text-white sticky flex shrink-0 w-screen h-32 mt-auto ">
-           
-            <img src="images/Untitled design.png" alt="logo" class="m-4">
-            <div class="flex flex-col sm:gap-4 p-4 "></div>
-       <p class="text-right">Copyright &copy; <span id="year">2024</span></p>
-       <p class="text-right">All Rights Reserved</p>
+    <h1 class="font-effect-shadow-multiple sm:text-9xl text-6xl text-white font-bold " style="font-family:Rubik Glitch">TIC TAC TOE</h1>
+    <div>
+      Your Profile Goes here
+    </div>
+    </header>
+    <main class="w-full flex lg:flex-row flex-col gap-6 p-4 ">
+        <img src="images/tac.jpg" alt="tic tac toe board" width="400px" height="800px" class="rounded-[20px] mx -auto" >
+        <div class="grow flex flex-col flex-nowrap gap-4">
+          <div class="grow p-2 text-white bg-[blanchedalmond] border-2 rounded-[20px] sm:text-6xl text-3xl game-box"><a href="index.html">One player</a></div>
+          <div class="grow p-2 text-3xl text-white bg-[blanchedalmond] border-2 rounded-[20px] sm:text-6xl game-box"><a href="index1.html">Two players</a>  </div>
+          <div class="grow p-2 text-white text-3xl bg-[blanchedalmond] border-2 rounded-[20px] sm:text-6xl game-box"><a href>Multiplayers</a></div>    
+        </div>
+    </main> 
+    <footer id="footer" class="bg-gray-700 text-xl text-white bottom-0 flex relative w-screen">
+      <img src="images/Untitled design.png" alt="logo" class="m-4 max-h-32">
+      <div class="flex flex-col sm:gap-4 p-4 ">
+      <p class="text-right">Copyright &copy; <span id="year">2024</span></p>
+      <p class="text-right">All Rights Reserved</p>
       </div>
-            
     </footer>
-    
 </body>
 </html>
