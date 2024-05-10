@@ -18,6 +18,7 @@ const allChars = [
     'U', 'V', 'W', 'X', 'Y', 'Z',
     '!', '?', '#', ',', '.'
 ]
+localStorage.setItem('CurrentUser','none')
 
 // USED FUNCTIONS -----------------------------------------------------------------------
 // signing up functions
@@ -139,6 +140,7 @@ signInLink.addEventListener('click',function () {
     exusernInpt.value = ''
     expassInpt.value = ''
     document.querySelector('#pass-specifications').textContent = "(3-30 characters, no spaces)"
+    
 })
 
 signUpBtn.addEventListener('click', function() {
@@ -150,7 +152,6 @@ signUpBtn.addEventListener('click', function() {
     result = validPass()
     if (!result) {return}
     console.log('PASSWORD IS VALID')
-    
     console.log('FINISHED VALIDATION')
     console.log('INITIATE STORE PASSWORD')
     console.log('BEGIN PASSWORD ENCODING')
@@ -158,6 +159,9 @@ signUpBtn.addEventListener('click', function() {
     console.log('PASSWORD SUCCESFULLY ENCODED')
     setPass(encodees[0],[encodees[1]])
     console.log('PASSWORD STORING COMPLETE')
+    console.log('LOADING HOME PAGE')
+    window.location.href = 'home.html'
+    localStorage.setItem('CurrentUser',usernInpt.value)
 })
 
 signInBtn.addEventListener('click',function() {
@@ -168,4 +172,8 @@ signInBtn.addEventListener('click',function() {
     truePass = decodePass()
     if (!checkPassIs(truePass)){return}
     console.log('YOU MAY PROCEED TO LOG IN!!')
+    window.location.href = 'home.html'
+    console.log('LOADING HOME PAGE')
+    localStorage.setItem('CurrentUser',exusernInpt.value)
 })
+

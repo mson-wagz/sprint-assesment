@@ -14,6 +14,10 @@ const winningCombinations = [
 let space = ["", "", "", "", "", "", "", "", ""]
 let playerTurn = "X"
 let playing = false
+const xScore = document.querySelector('#number-wins-X'),
+      oScore = document.querySelector('#number-draws'),
+      drawScore = document.querySelector('#number-wins-O')
+ let xWins = 0, draws = 0, oWins = 0
 
 startGame()
 
@@ -75,10 +79,21 @@ function confirmWinner(){
 
     if(gameWon){
         gameStatus.textContent = `${playerTurn} wins!😮‍💨`
+        if (playerTurn == 'X'){
+            console.log('I AM HERE')
+            xWins++
+            console.log(xWins)
+            xScore.textContent = xWins
+        } else {
+            oWins++
+            oScore.textContent = oWins
+        }
         playing = false
     }
     else if(!space.includes("")){
         gameStatus.textContent = `It's a tie🤝`
+        draws++
+        drawScore.textContent = draws
         playing = false
     }
     else{

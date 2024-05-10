@@ -6,7 +6,8 @@
     <title>TIC TAC TOE</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css?family=Rubik Glitch&effct=shadow-multiple" rel="stylesheet" type="text/css">  
+    <link href="https://fonts.googleapis.com/css?family=Rubik Glitch&effct=shadow-multiple" rel="stylesheet" type="text/css"> 
+    <script src="homepage.js" defer></script> 
     <style>
       .container{
         opacity: 10;
@@ -15,6 +16,7 @@
         animation: slide-up 20s ease infinite;
      }
     @keyframes slide-up{
+
       0% {
         transform: translate(20%, 0); 
         opacity: 0.7;
@@ -44,7 +46,7 @@
     <h1 class="font-effect-shadow-multiple sm:text-9xl text-6xl text-white font-bold " style="font-family:Rubik Glitch">TIC TAC TOE</h1>
     <div class="bg-white w-[95%] sm:w-[90%] mx-auto rounded-[15px] bg-opacity-80 p-4">
       Your Profile Goes here
-      <p>Name</p>
+      <p id="user-name">Username : </p>
       <p>Wins : </p>
       <p>Losses : </p>
       <p>Draws : </p>
