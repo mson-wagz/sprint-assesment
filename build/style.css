@@ -12,12 +12,10 @@ body {
 
 h1 {
   font-size: 3rem;
-  margin-bottom: 20px;
-  color: aliceblue;
-  text-shadow: 2px 2px 4px #000000;
-  transition: color 0.3s;
+  font-weight: bold;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 0 #a9a9a9;
+  color: #444;
 }
-
 .board {
   display: grid;
   grid-template-columns: repeat(3, 100px);
@@ -26,7 +24,10 @@ h1 {
 }
 
 .cell {
-  background: white;
+  background: blanchedalmond;
+  border: 1px solid #000;
+  box-shadow: 2px 2px 4px #000;
+  border-radius: 3px;
   display: flex;
   justify-content: center;
   align-items: center;

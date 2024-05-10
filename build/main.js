@@ -64,6 +64,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+if(gameWon){
+    switchPlayer()
+    gameStatus.textContent = `${playerTurn} wins!😮‍💨`
+    playing = false
+} 
+else if(!space.includes("")){ 
+    gameStatus.textContent = `It's a tie!🤝`
+    playing = false
+} else{
+    switchPlayer()
+}
+
+
 
  
 
