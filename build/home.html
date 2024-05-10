@@ -5,9 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TIC TAC TOE</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link href="https://fonts.googleapis.com/css?family=Rubik Glitch&effct=shadow-multiple" rel="stylesheet" type="text/css">
+
     <style>
+      body{
+        background-image: url(images/bg2.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
 .container{
     opacity: 10;
 }
@@ -24,17 +30,17 @@
     margin-left:48rem ;
     font-size:6rem;
     transform: translateX(-50); 
-    margin-bottom: 20px;
+    margin-bottom: 60px;
     opacity: 0;
     animation: slide-up 20s ease infinite;
  }
 @keyframes slide-up{
   0% {
-    transform: translateY(-50%, 100%); 
+    transform: translateY(-50%); 
     opacity: 0;
   } 
   100% {
-    transform: translateY(-50%, 0%); 
+    transform: translateY( 0%); 
     opacity: 1;
   } 
 }
@@ -44,30 +50,29 @@
 .box:nth-child(2) {
   animation-delay: 1s; /* Delay for the second text */
 }
-.box:nth-child(3) {
-  animation-delay: 1.5s; /* Delay for the third text */
-}
+
     </style>
 </head>
+<audio autoplay loop>
+  <source src="EnV - FireFrost (320).mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
 
-<body class="min-h-screen bg-black" style="background-image: url(images/bg2.jpg);background-repeat: no-repeat;background-size: cover;">
-    <audio autoplay loop>
-        <source src="EnV - FireFrost (320).mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
+<body class="min-h-screen bg-black">
+    
     <h1 class="font-effect-shadow-multiple text-9xl text-white font-bold " style="font-family:Rubik Glitch">TIC TAC TOE</h1>
-    <div class="container">
+    <div class="container mx-auto mt-24">
    <div class=" relative top-2/4 left-20 mt-28 mb-36 ">
     <img src="images/tac.jpg" alt="tic tac toe board" width="400px" height="800px" style="border-radius: 20px;">
 </div>
 <div class="sliding-box ">
     <div class="box border w-fit "><a href="index.html">One player</a></div>
     <div class="box border w-fit "><a href="index1.html">Two players</a>  </div>
-    <div class="box border w-fit "><a href>Multiplayers</a></div>
+    
 </div>
 
 </div>
-    <footer>
+    
         <footer id="footer" class="bg-gray-700 text-xl text-white sticky flex shrink-0 w-screen h-32 mt-auto ">
            
             <img src="images/Untitled design.png" alt="logo" class="m-4">

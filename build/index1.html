@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic-Tac-Toe</title>
     <link rel="stylesheet" href="style1.css">
+    <link href="https://fonts.googleapis.com/css?family=Croissant One" rel="stylesheet"> 
+    <script src="main1.js" defer></script>
 </head>
-<body>
+
 <audio controls autoplay loop>
     <source src="EnV - FireFrost (320).mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
-    <header>
-        <h1>Tic Tac Toe </h1>
-        <h2>(Offline Multiplayer)</h2>
-    </header>
-    <div class="container">
+  
+<body>
+    <h1>TIC TAC TOE</h1>
         <div class="board circle" id="board">
             <div cellIndex = "0" class="cell" data-cell></div>
             <div cellIndex = "1" class="cell" data-cell></div>
@@ -29,11 +29,21 @@
         </div>
     </div>
     </div>
+    
     <div class="winning-message">
         <h2 id="game-status"></h2>
         <div data-winning-message-text></div>
         <button id="restartButton">Restart</button>
     </div>
-    <script src="main1.js" defer></script>
+    <footer id="footer">
+           
+        <img src="images/Untitled design.png" width="50px" alt="logo">
+        <div></div>
+   <p>Copyright &copy; <span id="year">2024</span></p>
+   <p>All Rights Reserved</p>
+  </div>
+        
+</footer> 
+
 </body>
 </html>

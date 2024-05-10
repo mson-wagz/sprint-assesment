@@ -1,8 +1,7 @@
 body {
   font-family: 'Briem Hand', sans-serif;
-  /* background-image: url(images/bg2.jpg);
-  background-repeat: no-repeat;
-  background-size: cover; */
+  background-image: url(images/bg4.jpg);background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,11 +17,22 @@ h1 {
   text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 0 #a9a9a9;
   color: #444;
 }
-.board {
+.button{
+  font-size:1.5rem;
+  color:blanchedalmond;
+
+}
+#computer-el{
+  background-color:blanchedalmond;
+  color:#444;
+  font-weight:bold;
+}
+#board {
   display: grid;
   grid-template-columns: repeat(3, 100px);
   grid-template-rows: repeat(3, 100px);
   gap: 5px;
+
 }
 
 .cell {
@@ -85,6 +95,7 @@ button:hover {
 footer {
   display: flex;
   position: fixed;
+  z-index:1;
   bottom: 0;
   width: 100%;
   color: white;
