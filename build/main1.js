@@ -1,9 +1,7 @@
-
 const myCells = document.querySelectorAll(".cell")
-const gameStatus= document.getElementById("game-status")
-const restartButton = document.getElementById("restartButton")
-
-const winningConditions = [
+const gameStatus = document.querySelector("#game-status")
+const restartButton = document.querySelector("#restartButton")
+const winningCombinations = [
     [0, 1, 2],
     [3, 4, 5],
     [6, 7, 8],
@@ -19,55 +17,52 @@ let playing = false
 
 startGame()
 
-function startGame() {
-    myCells.forEach(cell => {
-        cell.addEventListener("click", handleclick)
-    })
-    restartButton.addEventListener("click", function restartGame() {
+function startGame(){
+    myCells.forEach(cell => cell.addEventListener("click", handleClick))
+    restartButton.addEventListener("click", function restartGame(){
         playerTurn = "X"
         space = ["", "", "", "", "", "", "", "", ""]
-        gameStatus.textContent = `${playerTurn}'s starts`
+        gameStatus.textContent = `${playerTurn}'s turn`
         myCells.forEach(cell => cell.textContent = "")
-        playing = true;
+        playing = true
     })
     gameStatus.textContent = `${playerTurn}'s starts`
     playing = true
 }
 
-function handleclick(){
+function handleClick(){
     const cellIndex = this.getAttribute("cellIndex")
 
-    if (space[cellIndex] != "" || !playing){
-        return;
+    if(space[cellIndex] != "" || !playing){
+        return
     }
 
     updateCell(this, cellIndex)
-    switchPlayer()
     confirmWinner()
 }
 
-function updateCell(cell, index) {
+function updateCell(cell, index){
     space[index] = playerTurn
     cell.textContent = playerTurn
 }
 
-function switchPlayer() {
+function switchPlayer(){
     if(playerTurn == "X"){
         playerTurn = "O"
-    } else if(playerTurn = "O"){
+    } else{
         playerTurn = "X"
     }
-    gameStatus.textContent = `${playerTurn}'s Plays`
+    gameStatus.textContent = `${playerTurn}'s turn`
 }
 
-function confirmWinner() {
-    let gameWon = false;
+function confirmWinner(){
+    let gameWon = false
 
-    for(let i = 0; 1 < winningConditions.length; i+=1 ){
-        const condition = winningConditions[i] //[0, 1, 2] , [3, 4, 5], [1, 4, 7]
-        const cell1 = space[condition[0]] //3 
-        const cell2 = space[condition[1]] //4
-        const cell3 = space[condition[2]] //5
+    for(let i = 0; i < winningCombinations.length; i++){
+        const condition = winningCombinations[i]
+        const cell1 = space[condition[0]]
+        const cell2 = space[condition[1]]
+        const cell3 = space[condition[2]]
 
         if(cell1 == "" || cell2 == "" || cell3 == ""){
             continue
@@ -79,17 +74,15 @@ function confirmWinner() {
     }
 
     if(gameWon){
-        switchPlayer()
         gameStatus.textContent = `${playerTurn} wins!😮‍💨`
         playing = false
-    } 
-    else if(!space.includes("")){ 
-        gameStatus.textContent = `It's a tie!🤝`
+    }
+    else if(!space.includes("")){
+        gameStatus.textContent = `It's a tie🤝`
         playing = false
-    } else{
+    }
+    else{
         switchPlayer()
     }
 }
-
-
 
