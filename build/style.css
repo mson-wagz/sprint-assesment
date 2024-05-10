@@ -1,13 +1,15 @@
 body {
   font-family: 'Briem Hand', sans-serif;
-  background: #f0f0f0;
+  /* background-image: url(images/bg2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url(./build/images.jpg);
-  background-size: cover;
+  
+  
 }
 
 h1 {
