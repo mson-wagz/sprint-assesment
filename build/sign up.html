@@ -16,20 +16,24 @@
       </audio>
     <h1 class="font-effect-shadow-multiple text-9xl text-white font-bold" style="font-family:Rubik Glitch">TIC TAC TOE</h1>
     <div class="w-96 h-fit bg-gray-900  relative top-2/4 left-1/3 rounded-lg mt-48 mb-36">
-        <p class="text-4xl text-white font-bold text-center p-3">SIGN UP</p>
-       
-        <input type="text" name="First Name" id="First Name"
-        placeholder="First Name" autocomplete="on" required class="bg-black text-white w-80 h-10 mt-6 ml-9 rounded-lg">
-        <input type="text" name="Last name" id="Last name"
-        placeholder="Last Name" autocomplete="on" required class="bg-black text-white w-80 h-10 mt-6 ml-9 rounded-lg">
-        <input type="text" name="username" id="username"
-        placeholder="username" autocomplete="on" required class="bg-black text-white w-80 h-10 mt-6 ml-9 rounded-lg">
-        <input type="password" name="password" id="password1"
-        placeholder="password" autocomplete="on" required class="bg-black text-white w-80 h-10 mt-6 ml-9 rounded-lg">
-        <label for="password" class="text-white p-8">Password (3-30 characters, no spaces)</label>
-        <input type="password" name="password" id="password2" placeholder="confirm password" autocomplete="on" required class="bg-black text-white w-80 h-10 mt-8 ml-9 rounded-lg">
-        <button id="login-btn" class=" text-slate-500 font-bold w-80 h-10 mt-8 ml-9 border rounded-lg "><a href="build/log in.html">Sign up</a></button>
-        <p class="text-white text-lg p-5 pl-8">Have an account?<a href="log in.html"target="_self">Log in</a></p>
+        <p class="text-4xl text-white font-bold text-center p-3" id="welcome-text">SIGN UP</p>
+
+        <input type="text" name="username" id="username-inpt"
+        placeholder="Username" autocomplete="on" required class="block bg-black text-white w-80 h-10 mt-6 ml-9 rounded-lg p-2">
+        <input type="text" name="username" id="exusername-inpt"
+        placeholder="Enter your username" autocomplete="on" required class="hidden bg-black text-white w-80 h-10 mt-6 ml-9 rounded-lg p-2">
+        <p class="text-white pl-10 opacity-60 text-[9px] italic mt-2">Your username!</p>
+
+        <input type="password" name="password" id="password-inpt"
+        placeholder="Password" autocomplete="on" required class="bg-black text-white w-80 h-10 mt-6 ml-9 rounded-lg p-2 ">
+        
+        <input type="password" name="password" id="expassword-inpt"
+        placeholder="Password" autocomplete="on" required class="hidden bg-black text-white w-80 h-10 mt-6 ml-9 rounded-lg p-2 ">
+        <p class="text-white pl-10 pt-2 opacity-60 text-[9px] italic" id="specifications">(3-30 characters, no spaces)</p>
+
+
+        <button id="sign-up-btn" class=" text-slate-500 font-bold w-80 h-10 mt-8 ml-9 border rounded-lg ">Sign Up</button>
+        <p class="text-white text-lg p-5 pl-8">Have an account? <span id="sign-in-link" class="hover:opacity-80 hover:underline text-blue-300 cursor-pointer">Log in</span></p>
     </div>
     </div>
     <footer>
@@ -42,6 +46,6 @@
       </div>
             
     </footer>
-    
+    <script src="signjs.js" defer></script>
 </body>
 </html>
