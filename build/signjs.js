@@ -3,18 +3,27 @@ const passInpt = document.getElementById('password-inpt'),
       usernInpt = document.getElementById('username-inpt')
 const expassInpt = document.getElementById('expassword-inpt'),
       exusernInpt = document.getElementById('exusername-inpt')
-const signUpBtn = document.getElementById('sign-up-btn')
-const signInBtn = document.getElementById('sign-in-link')
+const signUpBtn = document.getElementById('sign-up-btn'),
+    signInLink = document.getElementById('sign-in-link'),
+    signInBtn = document.getElementById('sign-in-btn'),
+    signUpLink = document.getElementById('sign-up-link')
 const welcomeText = document.getElementById('welcome-text')
-let signUpCurrentView = true
-let signInCurrentView = false
+const allChars = [
+    '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
+    'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
+    'u', 'v', 'w', 'x', 'y', 'z',
+    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
+    'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+    'U', 'V', 'W', 'X', 'Y', 'Z',
+    '!', '?', '#', ',', '.'
+]
 
-const setPass = (val1,val2) => {
-    localStorage.setItem(usernInpt.value,JSON.stringify([val1,val2]))
-}
+// USED FUNCTIONS -----------------------------------------------------------------------
+// signing up functions
 const validPass = () => {
     let yourPass = passInpt.value
-    let btnNxtSib = document.querySelector('#specifications')
+    let btnNxtSib = document.querySelector('#pass-specifications')
     let whiteSpace = /\s/
     if (!(whiteSpace.test(yourPass))) {
         if (yourPass.length >= 8 && yourPass.length <= 30){  
@@ -39,7 +48,7 @@ const validPass = () => {
 }
 const validName = () => {
     let yourName = usernInpt.value
-    let usernNextSib = usernInpt.nextElementSibling
+    let usernNextSib = document.querySelector('#name-specifications')
     let exName = localStorage.getItem(yourName)
     if (exName){
         console.log('NAME CHECK FAILED')
@@ -49,16 +58,6 @@ const validName = () => {
     usernNextSib.textContent = 'Your username!'
     return true
 }
-const allChars = [
-    '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
-    'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
-    'u', 'v', 'w', 'x', 'y', 'z',
-    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
-    'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
-    'U', 'V', 'W', 'X', 'Y', 'Z',
-    '!', '?', '#', ',', '.'
-]
 const encodePass = () => {
     let passLength = passInpt.value.length
     let CodedLength = Math.floor(Math.random()*30 + 61)
@@ -81,14 +80,19 @@ const encodePass = () => {
     }
     return [encodedPass, wordPoses]
 }
+const setPass = (val1,val2) => {
+    localStorage.setItem(usernInpt.value,JSON.stringify([val1,val2]))
+}
+
+// signing in functions
 const checkNameExist = () => {
     console.log('Checking whether the name exists')
     let theUserInpt = localStorage.getItem(exusernInpt.value)
-    let errorUserMess = exusernInpt.nextElementSibling
+    let errorUserMess = document.querySelector('#name-specifications')
     if (!theUserInpt){
         errorUserMess.textContent = "This username doesn't exist"
         return false}
-        errorUserMess.textContent = 'Nice username :)'
+        errorUserMess.textContent = 'Username verified'
     return true
 }
 const decodePass = () => {
@@ -100,48 +104,45 @@ const decodePass = () => {
         unraveledPass += stringToDecode[arrToUse[i]]
     }
     return unraveledPass
-}
+} 
 const checkPassIs = (val) => {
-    let errorForPass =  expassInpt.nextElementSibling 
+    let errorForPass =  document.querySelector('#pass-specifications')
     if (expassInpt.value !== val) {
         errorForPass.textContent = 'Wrong Password'
         return false
     }
-    errorForPass.textContent = 'Logging in..'
+    errorForPass.textContent = 'Logging in...'
     return true
 }
-const toggleForSignUp = () => {
-    passInpt.classList.add('block')
-    passInpt.classList.remove('hidden')
-    usernInpt.classList.add('block')
-    usernInpt.classList.remove('hidden')
-    exusernInpt.classList.add('hidden')
-    exusernInpt.classList.remove('block')
-    expassInpt.classList.add('hidden')
-    expassInpt.classList.remove('block')
+const displayToggles = () => {
+    passInpt.classList.toggle('hidden')
+    usernInpt.classList.toggle('hidden')
+    expassInpt.classList.toggle('hidden')
+    exusernInpt.classList.toggle('hidden')
+    signInBtn.classList.toggle('hidden')
+    signUpBtn.classList.toggle('hidden')
+    signInLink.classList.toggle('hidden')
+    signUpLink.classList.toggle('hidden')
+}
+
+// FUNCTION CALLS -----------------------------------------------------------------------
+signUpLink.addEventListener('click',function () {
     welcomeText.textContent = 'SIGN UP'
-    signUpCurrentView = true
-    signInCurrentView = false
-}
-const toggleForSignIn = () => {
-    passInpt.classList.remove('block')
-    passInpt.classList.add('hidden')
-    usernInpt.classList.remove('block')
-    usernInpt.classList.add('hidden')
-    exusernInpt.classList.remove('hidden')
-    exusernInpt.classList.add('block')
-    expassInpt.classList.remove('hidden')
-    expassInpt.classList.add('block')
-    signUpCurrentView = false
-    signInCurrentView = true
+    displayToggles()
+    usernInpt.value = ''
+    passInpt.value = ''
+    document.querySelector('#pass-specifications').textContent = "(3-30 characters, no spaces)"
+})
+signInLink.addEventListener('click',function () {
     welcomeText.textContent = 'WELCOME BACK!'
-    let btnNxtSib = document.querySelector('#specifications')
-    btnNxtSib.textContent = "(3-30 characters, no spaces)"
-}
+    displayToggles()
+    exusernInpt.value = ''
+    expassInpt.value = ''
+    document.querySelector('#pass-specifications').textContent = "(3-30 characters, no spaces)"
+})
+
 signUpBtn.addEventListener('click', function() {
-    if (!signUpCurrentView){toggleForSignUp();return}
-    console.log('BUTTON HAS BEEN CLICKED, BEGIN VALIDATION')
-    
+    console.log('SIGN UPBUTTON HAS BEEN CLICKED, BEGIN VALIDATION')
     result2 = validName()
     if (!result2) {return}
     console.log('NAME IS VALID')
@@ -159,8 +160,7 @@ signUpBtn.addEventListener('click', function() {
     console.log('PASSWORD STORING COMPLETE')
 })
 
-signInBtn.addEventListener('click',function () {
-    if (!signInCurrentView){toggleForSignIn();return}
+signInBtn.addEventListener('click',function() {
     console.log('SIGN IN BUTTON HAS BEEN CLICKED. BEGIN USER - PASS CHECK')
     if (!checkNameExist()){return}
     console.log('THE USERNAME DOES EXIST!')
@@ -169,4 +169,3 @@ signInBtn.addEventListener('click',function () {
     if (!checkPassIs(truePass)){return}
     console.log('YOU MAY PROCEED TO LOG IN!!')
 })
-
