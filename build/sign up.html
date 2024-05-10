@@ -29,18 +29,20 @@
         placeholder="Username" autocomplete="on" required class="block bg-black text-white w-80 h-10 mt-6 ml-9 rounded-lg p-2">
         <input type="text" name="username" id="exusername-inpt"
         placeholder="Enter your username" autocomplete="on" required class="hidden bg-black text-white w-80 h-10 mt-6 ml-9 rounded-lg p-2">
-        <p class="text-white pl-10 opacity-60 text-[9px] italic mt-2">Your username!</p>
+        <p class="text-white pl-10 opacity-60 text-[9px] italic mt-2" id = 'name-specifications'>Your username!</p>
 
         <input type="password" name="password" id="password-inpt"
         placeholder="Password" autocomplete="on" required class="bg-black text-white w-80 h-10 mt-6 ml-9 rounded-lg p-2 ">
         
         <input type="password" name="password" id="expassword-inpt"
         placeholder="Password" autocomplete="on" required class="hidden bg-black text-white w-80 h-10 mt-6 ml-9 rounded-lg p-2 ">
-        <p class="text-white pl-10 pt-2 opacity-60 text-[9px] italic" id="specifications">(3-30 characters, no spaces)</p>
+        <p class="text-white pl-10 pt-2 opacity-60 text-[9px] italic" id="pass-specifications">(3-30 characters, no spaces)</p>
 
 
         <button id="sign-up-btn" class=" text-slate-500 font-bold w-80 h-10 mt-8 ml-9 border rounded-lg ">Sign Up</button>
-        <p class="text-white text-lg p-5 pl-8">Have an account? <span id="sign-in-link" class="hover:opacity-80 hover:underline text-blue-300 cursor-pointer">Log in</span></p>
+        <button id="sign-in-btn" class="hidden text-slate-500 font-bold w-80 h-10 mt-8 ml-9 border rounded-lg ">Log in</button>
+        <p id="sign-in-link" class="italic opacity-80 text-white text-lg p-5 pl-8">Already have an account? <span  class="hover:opacity-80 hover:underline text-blue-300 cursor-pointer">Log in</span></p>
+        <p id="sign-up-link" class="italic opacity-80 hidden text-white text-lg p-5 pl-8">Don't have an account? <span  class="hover:opacity-80 hover:underline text-blue-300 cursor-pointer">Sign up</span></p>
     </div>
     </div>
     <footer>
