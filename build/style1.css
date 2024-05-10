@@ -145,8 +145,12 @@ body {
 }
 
 #restartButton{
+<<<<<<< HEAD
+  margin-top: 5px;
+=======
   margin: 50px;
   margin-bottom: 70px;
+>>>>>>> 470d846df17a5f207919fbb5fd516ab06c3980f7
   border: none;
   width: 150px;
   height: 50px;
@@ -189,6 +193,35 @@ body {
   text-align: center;
 }
 
+<<<<<<< HEAD
+
+#restartButton:hover{
+  background-color: #333;
+  color: whitesmoke;
+  transform: scale(1.1);
+  cursor: pointer;
+  transition: all 0.5s ease;
+  border: 2px red;
+}
+
+.results{
+  background-color: #e3e7f3;
+  position: fixed;
+  top: 0;
+  top: -100%;
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 50px;
+  transition: all 0.4s ease-in-out;
+}
+
+=======
  footer {
   display: flex;
   position: fixed;
@@ -199,3 +232,4 @@ body {
   gap: 5px;
   background-color: gray; 
 }
+>>>>>>> 470d846df17a5f207919fbb5fd516ab06c3980f7

@@ -1,6 +1,7 @@
 const myCells = document.querySelectorAll(".cell")
 const gameStatus = document.querySelector("#game-status")
 const restartButton = document.querySelector("#restartButton")
+const playerResults = document.querySelector(".results")
 const winningCombinations = [
     [0, 1, 2],
     [3, 4, 5],
@@ -23,13 +24,7 @@ startGame()
 
 function startGame(){
     myCells.forEach(cell => cell.addEventListener("click", handleClick))
-    restartButton.addEventListener("click", function restartGame(){
-        playerTurn = "X"
-        space = ["", "", "", "", "", "", "", "", ""]
-        gameStatus.textContent = `${playerTurn}'s turn`
-        myCells.forEach(cell => cell.textContent = "")
-        playing = true
-    })
+    restartButton.addEventListener("click", restartGame())
     gameStatus.textContent = `${playerTurn}'s starts`
     playing = true
 }
@@ -78,7 +73,13 @@ function confirmWinner(){
     }
 
     if(gameWon){
+        function showPlayerResults() {
+            playerResults.style.top = '0%'    
+        }
         gameStatus.textContent = `${playerTurn} wins!😮‍💨`
+        playerResults.textContent = `${playerTurn} wins the round!😮‍💨`
+        playerResults.innerHTML += "<button id='restartButton' onclick ='closePlayerResults()'>Restart</button>"
+        showPlayerResults()
         if (playerTurn == 'X'){
             console.log('I AM HERE')
             xWins++
@@ -91,7 +92,13 @@ function confirmWinner(){
         playing = false
     }
     else if(!space.includes("")){
+        function showPlayerResults() {
+            playerResults.style.top = '0%' 
+        }
         gameStatus.textContent = `It's a tie🤝`
+        playerResults.textContent = `It's a tie🤝`
+        playerResults.innerHTML += "<button id='restartButton' onclick ='closePlayerResults()'>Restart</button>"
+        showPlayerResults()
         draws++
         drawScore.textContent = draws
         playing = false
@@ -100,4 +107,20 @@ function confirmWinner(){
         switchPlayer()
     }
 }
+
+function restartGame() {
+    playerTurn = "X"
+    space = ["", "", "", "", "", "", "", "", ""]
+    gameStatus.textContent = `${playerTurn}'s turn`
+    myCells.forEach(cell => cell.textContent = "")
+    playing = true
+}
+
+
+function closePlayerResults() {
+    playerResults.style.top = '-100%'
+    restartGame()
+}
+
+
 
