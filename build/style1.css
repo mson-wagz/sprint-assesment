@@ -16,7 +16,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 }
  h1 {
   margin-top: 50px;
@@ -157,7 +157,40 @@ body {
   font-weight: bold;
   background-color: blanchedalmond;
   border-radius: 10px;
-  
+}
+#restartButton:hover {
+  background-color: hsla(36, 100%, 90%, 0.644);
+}
+.track-scores {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-rows: 1fr 0.5fr 0.25fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  background: linear-gradient(to left,hsla(14, 65%, 44%, 0.732),hsla(0, 7%, 65%, 0.979)) ;
+  margin-top: 18px;
+  border: 1px solid black;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 2px 2px 8px 6px rgba(0, 0, 0, 0.8); 
+}
+#scores {
+  text-align: center;
+  grid-column: 1 / -1;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid black;
+  color: white;
+}
+.score-data-names {
+  color: wheat;
+  margin: 0;
+  padding-top: 4px;
+  text-align: center;
+}
+.score-data-value {
+  color: white;
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
 <<<<<<< HEAD
