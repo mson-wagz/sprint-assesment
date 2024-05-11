@@ -6,101 +6,92 @@
     <title>TIC TAC TOE</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css?family=Croissant One|Rubik Glitch&effct=shadow-multiple" rel="stylesheet" 
-    type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Croissant One|Rubik Glitch&effct=shadow-multiple" rel="stylesheet" type="text/css">
     <style>
-.container{
-    opacity: 10;
-}
-.sliding-box{
-    position: absolute;
-    top: 90%;
-}
-.box{
-     color:black;
-    text-align: left;
-    right: auto;
-    background-color:blanchedalmond;
-    border-radius: 20px;
-    margin-left:48rem ;
-    font-size:6rem;
-    transform: translateX(-50); 
-    margin-bottom: 60px;
-    opacity: 0;
-    animation: slide-up 20s ease infinite;
- }
-@keyframes slide-up{
-  0% {
-    transform: translateY(-50%); 
-    opacity: 0;
-  } 
-  100% {
-    transform: translateY( 0%); 
-    opacity: 1;
-  } 
-}
-.box:nth-child(1) {
-  animation-delay: 0.5s; /* Delay for the first text */
-}
-.box:nth-child(2) {
-  animation-delay: 1s; /* Delay for the second text */
-}
-@media (min-width: 640px) {
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Rubik Glitch', sans-serif;
+            background-image: url(images/bg2.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .container {
+            max-width: 90%;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 50px;
+        }
         .sliding-box {
-            flex-direction: row; /* For larger screens, arrange boxes horizontally */
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
         }
         .box {
-            margin-right: 2rem; /* Adjust margin for larger screens */
+            color: black;
+            background-color: blanchedalmond;
+            border-radius: 20px;
+            margin: 0 10px;
+            padding: 20px 40px;
+            font-size: 3rem;
         }
-    }
-    .bin{
-      font-family: Croissant One;
-      font-size: 2.5rem;
-      background-color: blanchedalmond;
-      padding-left: 10px;
+        .box a {
+            text-decoration: none;
+            color: black;
+        }
+        @media (min-width: 640px) {
+            .container {
+                padding-top: 100px;
+            }
+        }
+        @media (max-width: 480px) {
+            .box {
+                font-size: 2rem;
+            }
+        }
+        .bin {
+            font-family: 'Croissant One', sans-serif;
+            font-size: 2.5rem;
+            background-color: blanchedalmond;
+            padding-left: 10px;
+        }
+        @media (min-width: 480px) {
+            .bin {
+                font-size: 3rem;
+            }
+            .img-footer{
+              width: 50px;
+              height: 50px;
+              bottom: 0;
+              
+            }
+            footer{
+              font-size: 1.5rem;
+              padding: 3px;
+              width: auto;
 
-
-    }
-    
-
+            };
+        }
+       
     </style>
 </head>
-<audio autoplay loop>
-  <source src="EnV - FireFrost (320).mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-
-<body class="min-h-screen bg-black" style="background-image: url(images/bg2.jpg);background-repeat: no-repeat;background-size: cover;">
-    <h1 class="font-effect-shadow-multiple text-9xl text-white font-bold text-center" style="font-family:Rubik Glitch">TIC TAC TOE</h1>
-    <div class=" carton  w-[95%] sm:w-[90%] mx-auto  bg-opacity-80 p-4">
-      <p class="bin">Name</p>
-      <p class="bin">Wins : </p>
-      <p class="bin">Losses : </p>
-      <p class="bin">Draws : </p>
-    </div>
+<body>
+    <h1 class="font-effect-shadow-multiple text-9xl text-white font-bold text-center">TIC TAC TOE</h1>
     <div class="container">
-   <div class=" relative top-2/4 left-20 mt-28 mb-36 ">
-    <img src="images/tac.jpg" alt="tic tac toe board" width="400px" height="800px" style="border-radius: 20px;">
-</div>
-
-<div class="sliding-box ">
-    <div class="box border w-fit  "><a href="index.html">One player</a></div>
-    <div class="box border w-fit "><a href="index1.html">Two players</a>  </div>
-    
-</div>
-
-</div>
-    
-        <footer id="footer" class="bg-gray-700 text-xl text-white sticky flex shrink-0 w-screen h-32 mt-auto  ">
-           
-            <img src="images/Untitled design.png" alt="logo" class="m-4">
-            <div class="flex flex-col sm:gap-4 p-4 "></div>
-       <p class="text-right">Copyright &copy; <span id="year">2024</span></p>
-       <p class="text-right">All Rights Reserved</p>
-      </div>
-            
+        <div class="relative top-2/4 left-20 mt-28 mb-36">
+            <img src="images/tac.jpg" alt="tic tac toe board" style="border-radius: 20px; max-width: 100%;">
+        </div>
+        <div class="sliding-box">
+            <div class="box border w-fit"><a href="index.html">One player</a></div>
+            <div class="box border w-fit"><a href="index1.html">Two players</a></div>
+        </div>
+    </div>
+    <footer>
+        <img src="images/Untitled design.png" alt="logo" class="img-footer">
+        <div class="flex flex-col gap-4 p-4">
+            <p>Copyright &copy; <span id="year">2024</span></p>
+            <p>All Rights Reserved</p>
+        </div>
     </footer>
-    
 </body>
 </html>
-ChatGPT
